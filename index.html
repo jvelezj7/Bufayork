@@ -1,0 +1,86 @@
+index.html 
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>BUFAYORK ACTIVATED</title>
+
+<style>
+
+body{
+    margin:0;
+    overflow:hidden;
+    background:black;
+    cursor:none;
+}
+
+/* BUFALO */
+
+#buffalo{
+    position:absolute;
+    width:500px;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%, -50%);
+
+    pointer-events:none;
+}
+
+/* TEXTO */
+
+h1{
+    position:absolute;
+    width:100%;
+    top:20px;
+    text-align:center;
+
+    color:#00ff00;
+
+    font-family:Arial;
+    font-size:40px;
+
+    text-shadow:0 0 20px #00ff00;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>BUFAYORK DETECTED</h1>
+
+<img id="buffalo" src="bufayork.png">
+
+<audio id="roar" loop>
+    <source src="rugido.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const buffalo = document.getElementById("buffalo");
+const roar = document.getElementById("roar");
+
+/* Intentar reproducir sonido */
+
+document.addEventListener("click", ()=>{
+
+    roar.play();
+
+}, { once:true });
+
+/* Seguir el mouse */
+
+document.addEventListener("mousemove", (e)=>{
+
+    buffalo.style.left = e.clientX + "px";
+    buffalo.style.top = e.clientY + "px";
+
+});
+
+</script>
+
+</body>
+</html>
